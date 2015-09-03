@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+{% block page_content %}
+
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Marka Id</th>
+            <th>Marka</th>
+            <th>Model Id</th>
+            <th>Model</th>
+            <th>Model Yılıd</th>
+            <th>Özellik</th>
+            <th>Özellik Değeri</th>
+        </tr>
+        </thead>
+
+        <tfoot>
+        <tr>
+            <th>Marka Id</th>
+            <th>Marka</th>
+            <th>Model Id</th>
+            <th>Model</th>
+            <th>Model Yılıd</th>
+            <th>Özellik</th>
+            <th>Özellik Değeri</th>
+        </tr>
+        </tfoot>
+
+        <tbody>
+
+        {% for item in rows %}
+        <tr>
+            <td>{{ item.brandId }}</td>
+            <td>{{ item.brandName }}</td>
+            <td>{{ item.modelId }}</td>
+            <td>{{ item.modelName }}</td>
+            <td>{{ item.modelYear }}</td>
+            <td>{{ item.attrName }}</td>
+            <td>{{ item.attrValue }}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
+{% block javascripts_inline %}
+    <script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+    </script>
+{% endblock %}

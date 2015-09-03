@@ -1,0 +1,9 @@
+toolkit:
+    resource: "@ToolkitBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+crawler:
+    resource: "@CrawlerBundle/Controller/"
+    type:     annotation
+    prefix:   /
